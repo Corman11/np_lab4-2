@@ -32,4 +32,4 @@ jobs:
         python --version
 #Wykonanie analizy kodu
     - name: analiza stylu kodu przy użyciu biblioteki flake8
-      run: flake8 . np_lab4-2
+      run: flake8 . app
