@@ -1,5 +1,5 @@
 name: check_syntax
-
+#Gałąz na którą push aktywuje workflow
 on:
   push:
     branches:
@@ -7,32 +7,29 @@ on:
       
 
 jobs:
-  syntax-check:
+  check_syntax:
     runs-on: ubuntu-latest
-
+# Tworzę matrixa zawierającego dane wersje pythona
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
-
+# workflow wykona testy na wersjach pythona określonych w matrixie
     steps:
-    - name: Set up Python
+    - name: Tworzenie pythona o określonej wersji
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-        architecture: x64
+        
+#wykonanie aktualizacji pip
+    - name: aktualizacja pip
+      run: python -m pip install --upgrade pip
+# zainstalowanie biblioteki flake8
+    - name: instalacja flake8
+      run: python -m pip install flake8
 
-    - name: Update pip
-      run: |
-        python -m pip install --upgrade pip
-
-    - name: Install flake8
-      run: |
-        python -m pip install flake8
-
-    - name: Display Python version
+    - name: Wyświetlenie aktualnej wersji pythona
       run: |
         python --version
-
-    - name: Run flake8
-      run: |
-        flake8 .
+#Wykonanie analizy kodu
+    - name: analiza stylu kodu przy użyciu biblioteki flake8
+      run: flake8 
