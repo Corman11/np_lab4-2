@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - check_python_version
-      - main
+      
 
 jobs:
   check-python-version:
@@ -23,5 +23,8 @@ jobs:
     - name: Display Python version
       run: |
         python --version
-        
+
+    - name: asd
+      run: |
+        echo 'asd'
         
