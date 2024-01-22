@@ -18,6 +18,9 @@ jobs:
           os: ubuntu-latest
     
     steps:
+    - name: pobranie kodu commita
+      uses: actions/checkout@v2
+      
     - name: Utworzenie programu pythona
       uses: actions/setup-python@v2
       with:
