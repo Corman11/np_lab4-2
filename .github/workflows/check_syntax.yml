@@ -15,6 +15,9 @@ jobs:
         python-version: ["3.9", "3.10", "3.11"]
 # workflow wykona testy na wersjach pythona określonych w matrixie
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+    
     - name: Tworzenie pythona o określonej wersji
       uses: actions/setup-python@v2
       with:
