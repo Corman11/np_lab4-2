@@ -14,8 +14,9 @@ jobs:
       matrix:
         python-version: ["3.9", "3.10", "3.11"]
 # workflow wykona testy na wersjach pythona określonych w matrixie
+# pobranie kodu
     steps:
-    - name: Checkout Repository
+    - name: pobranie kodu commita
       uses: actions/checkout@v2
     
     - name: Tworzenie pythona o określonej wersji
