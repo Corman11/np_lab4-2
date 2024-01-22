@@ -16,7 +16,7 @@ def divide_numbers(a, b):
     return a / b
 
 
-if  __name__ == "__main__":
+if __name__ == "__main__":
     num1 = 10
     num2 = 5
     print(f"Dodawanie: {add_numbers(num1, num2)}")
