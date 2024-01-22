@@ -41,3 +41,6 @@ jobs:
     - name: Run flake8
       run: |
          flake8 --show-source --statistics .
+
+    - name: Run unittest
+      run: python -m unittest discover -v
